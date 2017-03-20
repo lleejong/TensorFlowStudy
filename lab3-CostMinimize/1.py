@@ -11,7 +11,7 @@ W = tf.placeholder(tf.float32)
 hypothesis = X * W
 
 #cost/loss function
-cost = tf.reduce_mean(tf.squre(hypothesis - Y))
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
 
 #launch the graph in a session
 sess = tf.Session()
@@ -25,7 +25,7 @@ cost_val = []
 
 for i in range(-30, 50):
 	feed_W = i * 0.1
-	curr_cost , curr_W = sess.run([cost,w], feed_dict={W: feed_W})
+	curr_cost , curr_W = sess.run([cost,W], feed_dict={W: feed_W})
 	W_val.append(curr_W)
 	cost_val.append(curr_cost)
 
